@@ -6,8 +6,12 @@
 [ext_resource type="Script" uid="uid://d0evlksef60sv" path="res://Scripts/Computer/System/ComputerMain.cs" id="4_e6mqj"]
 [ext_resource type="Resource" uid="uid://dy5ppcautp54f" path="res://Resources/NightTasks/Night_1/ClearCacheTask.tres" id="5_4m8fs"]
 [ext_resource type="Resource" uid="uid://bblotk6l0kfjo" path="res://Resources/NightTasks/Night_1/RewriteDocumentTask.tres" id="6_jrpk0"]
+[ext_resource type="FontFile" uid="uid://dxb7rdo07f164" path="res://Assets/Fonts/Rus/PressStart2P-Regular.ttf" id="7_ewvtf"]
 [ext_resource type="Script" uid="uid://bh2ixat3nxqj2" path="res://Scripts/Computer/System/CameraPanel.cs" id="7_jrpk0"]
 [ext_resource type="Shader" uid="uid://ncudkmmnw6bf" path="res://Assets/Shaders/cameraShader_V3.gdshader" id="8_0fxjp"]
+[ext_resource type="Script" uid="uid://drd3u2f7obvou" path="res://Scripts/Computer/System/LittleScripts/StateLabel.cs" id="8_3qcwo"]
+[ext_resource type="Texture2D" uid="uid://bt7u7xj501slc" path="res://Assets/Icons/ComputerInteface/free-icon-mute-552743.png" id="9_ewvtf"]
+[ext_resource type="Shader" uid="uid://dcmrbcmaikv0b" path="res://Assets/Shaders/Computer/MainPCShader.gdshader" id="12_5gfxg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83fg3"]
 content_margin_left = 15.0
@@ -20,19 +24,24 @@ bg_color = Color(0.075623, 0.16581434, 0.29210338, 1)
 bg_color = Color(0.04546591, 0.07144385, 0.07665043, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6u82b"]
-bg_color = Color(0.16433325, 0.2575978, 0.20383507, 1)
+bg_color = Color(0.078431375, 0.15686275, 0.10980392, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e6mqj"]
-bg_color = Color(0.2031681, 0.3806352, 0.2660983, 1)
+bg_color = Color(0.08627451, 0.2627451, 0.1882353, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.078431375, 0.15686275, 0.10980392, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ichqs"]
-bg_color = Color(0.18957847, 0.38509703, 0.49301153, 1)
+bg_color = Color(0.16271183, 0.35207215, 0.29623163, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4m8fs"]
-bg_color = Color(0.10564955, 0.23973796, 0.3145017, 1)
+bg_color = Color(0.14638835, 0.32496762, 0.2731611, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jrpk0"]
-bg_color = Color(0.22102791, 0.43826342, 0.5602735, 1)
+bg_color = Color(0.18165246, 0.3908331, 0.3309898, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0fxjp"]
 content_margin_left = 15.0
@@ -46,6 +55,30 @@ bg_color = Color(0.114255376, 0.16084442, 0.17015973, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ewvtf"]
 bg_color = Color(0.19382033, 0.2610247, 0.27446896, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6u82b"]
+shader = ExtResource("12_5gfxg")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.1600000076
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = true
+shader_parameter/roll = true
+shader_parameter/roll_speed = 5.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 2.48500011477762
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4510000214225
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.0970000046075
+shader_parameter/aberration = -0.013999953165000023
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 1.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.435
+shader_parameter/vignette_opacity = 0.59600002831
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vcdtc"]
 bg_color = Color(0.1618138, 0.18695155, 0.17753065, 1)
@@ -108,20 +141,20 @@ border_blend = true
 shader = ExtResource("8_0fxjp")
 shader_parameter/exposure = 1.0
 shader_parameter/contrast = 1.05
-shader_parameter/saturation = 1.382000018145
+shader_parameter/saturation = 0.170000008075
 shader_parameter/enable_pixelate = true
-shader_parameter/pixel_factor = 1.1170000055575
+shader_parameter/pixel_factor = 1.4630000219925
 shader_parameter/enable_posterize = true
 shader_parameter/color_levels = 16.000000665
-shader_parameter/dither_strength = 0.7030000333925
-shader_parameter/chrom_aberration = 0.010000000475
-shader_parameter/vignette_strength = 1.1850000562875
+shader_parameter/dither_strength = 0.6070000288325
+shader_parameter/chrom_aberration = 0.0
+shader_parameter/vignette_strength = 2.0
 shader_parameter/grain_strength = 0.25
 shader_parameter/tint_strength = 0.022000001045
 shader_parameter/scanline_density = 600.0
-shader_parameter/scanline_strength = 0.15
+shader_parameter/scanline_strength = 0.2970000141075
 shader_parameter/glitch_strength = 0.12
-shader_parameter/glitch_speed = 3.0
+shader_parameter/glitch_speed = 1.3090000621775
 shader_parameter/viewport_size_override = Vector2(0, 0)
 
 [node name="Display" type="Control" unique_id=1810904363 node_paths=PackedStringArray("_loadScreen", "_workWindow", "_cameraWindow")]
@@ -132,36 +165,48 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bws1p")
-_loadScreen = NodePath("LoadScreen")
-_workWindow = NodePath("Main")
-_cameraWindow = NodePath("Cameras")
+_loadScreen = NodePath("AspectRatioContainer/LoadScreen")
+_workWindow = NodePath("AspectRatioContainer/Main")
+_cameraWindow = NodePath("AspectRatioContainer/Cameras")
 
-[node name="LoadScreen" type="PanelContainer" parent="." unique_id=1682642494]
-visible = false
+[node name="bg" type="ColorRect" parent="." unique_id=1511364962]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=779862219]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LoadScreen" type="PanelContainer" parent="AspectRatioContainer" unique_id=1682642494]
+visible = false
+layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_83fg3")
 script = ExtResource("2_e6mqj")
 
-[node name="Logs" type="VBoxContainer" parent="LoadScreen" unique_id=392809362]
+[node name="Logs" type="VBoxContainer" parent="AspectRatioContainer/LoadScreen" unique_id=392809362]
 layout_mode = 2
 theme_override_constants/separation = 35
 
-[node name="StartUpText" type="Label" parent="LoadScreen/Logs" unique_id=2050983973]
+[node name="StartUpText" type="Label" parent="AspectRatioContainer/LoadScreen/Logs" unique_id=2050983973]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8963674, 0.89636743, 0.89636725, 1)
 theme_override_fonts/font = ExtResource("3_jv4d3")
 theme_override_font_sizes/font_size = 24
 text = "System Starting.."
 
-[node name="FirstBlock" type="VBoxContainer" parent="LoadScreen/Logs" unique_id=1277246091]
+[node name="FirstBlock" type="VBoxContainer" parent="AspectRatioContainer/LoadScreen/Logs" unique_id=1277246091]
 layout_mode = 2
 
-[node name="Log_1" type="Label" parent="LoadScreen/Logs/FirstBlock" unique_id=50415207]
+[node name="Log_1" type="Label" parent="AspectRatioContainer/LoadScreen/Logs/FirstBlock" unique_id=50415207]
 visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8963674, 0.89636743, 0.89636725, 1)
@@ -169,7 +214,7 @@ theme_override_fonts/font = ExtResource("3_jv4d3")
 theme_override_font_sizes/font_size = 18
 text = "HDD CONTROLLER IS OK."
 
-[node name="Log_2" type="Label" parent="LoadScreen/Logs/FirstBlock" unique_id=2104705575]
+[node name="Log_2" type="Label" parent="AspectRatioContainer/LoadScreen/Logs/FirstBlock" unique_id=2104705575]
 visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8963674, 0.89636743, 0.89636725, 1)
@@ -177,7 +222,7 @@ theme_override_fonts/font = ExtResource("3_jv4d3")
 theme_override_font_sizes/font_size = 18
 text = "Directory cache fixed."
 
-[node name="Log_3" type="Label" parent="LoadScreen/Logs/FirstBlock" unique_id=831354656]
+[node name="Log_3" type="Label" parent="AspectRatioContainer/LoadScreen/Logs/FirstBlock" unique_id=831354656]
 visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8963674, 0.89636743, 0.89636725, 1)
@@ -185,7 +230,7 @@ theme_override_fonts/font = ExtResource("3_jv4d3")
 theme_override_font_sizes/font_size = 18
 text = "Migrating to C:\\System32\\ADR_TOx64\\CLAS_SIFO"
 
-[node name="Log_4" type="Label" parent="LoadScreen/Logs/FirstBlock" unique_id=972833191]
+[node name="Log_4" type="Label" parent="AspectRatioContainer/LoadScreen/Logs/FirstBlock" unique_id=972833191]
 visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8963674, 0.89636743, 0.89636725, 1)
@@ -193,10 +238,10 @@ theme_override_fonts/font = ExtResource("3_jv4d3")
 theme_override_font_sizes/font_size = 18
 text = "Memory aligment finished done."
 
-[node name="SecoundBlock" type="VBoxContainer" parent="LoadScreen/Logs" unique_id=52085103]
+[node name="SecoundBlock" type="VBoxContainer" parent="AspectRatioContainer/LoadScreen/Logs" unique_id=52085103]
 layout_mode = 2
 
-[node name="Log_1" type="Label" parent="LoadScreen/Logs/SecoundBlock" unique_id=654053754]
+[node name="Log_1" type="Label" parent="AspectRatioContainer/LoadScreen/Logs/SecoundBlock" unique_id=654053754]
 visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8963674, 0.89636743, 0.89636725, 1)
@@ -204,7 +249,7 @@ theme_override_fonts/font = ExtResource("3_jv4d3")
 theme_override_font_sizes/font_size = 18
 text = "PROCESSOR CONTROLLER REFRESHING RENDER PROPERTY"
 
-[node name="Log_2" type="Label" parent="LoadScreen/Logs/SecoundBlock" unique_id=630049488]
+[node name="Log_2" type="Label" parent="AspectRatioContainer/LoadScreen/Logs/SecoundBlock" unique_id=630049488]
 visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8963674, 0.89636743, 0.89636725, 1)
@@ -212,7 +257,7 @@ theme_override_fonts/font = ExtResource("3_jv4d3")
 theme_override_font_sizes/font_size = 18
 text = "Trying to execute C:\\System32\\AdaptiveRender\\Property.cfg"
 
-[node name="Log_3" type="Label" parent="LoadScreen/Logs/SecoundBlock" unique_id=102313]
+[node name="Log_3" type="Label" parent="AspectRatioContainer/LoadScreen/Logs/SecoundBlock" unique_id=102313]
 visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8963674, 0.89636743, 0.89636725, 1)
@@ -220,7 +265,7 @@ theme_override_fonts/font = ExtResource("3_jv4d3")
 theme_override_font_sizes/font_size = 18
 text = "Trying to execute C:\\System32\\AdaptiveRender\\bin\\"
 
-[node name="Log_4" type="Label" parent="LoadScreen/Logs/SecoundBlock" unique_id=569425441]
+[node name="Log_4" type="Label" parent="AspectRatioContainer/LoadScreen/Logs/SecoundBlock" unique_id=569425441]
 visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8963674, 0.89636743, 0.89636725, 1)
@@ -228,10 +273,10 @@ theme_override_fonts/font = ExtResource("3_jv4d3")
 theme_override_font_sizes/font_size = 18
 text = "Processor controller finished render."
 
-[node name="ThirdBlock" type="VBoxContainer" parent="LoadScreen/Logs" unique_id=632905246]
+[node name="ThirdBlock" type="VBoxContainer" parent="AspectRatioContainer/LoadScreen/Logs" unique_id=632905246]
 layout_mode = 2
 
-[node name="Log_1" type="Label" parent="LoadScreen/Logs/ThirdBlock" unique_id=368785959]
+[node name="Log_1" type="Label" parent="AspectRatioContainer/LoadScreen/Logs/ThirdBlock" unique_id=368785959]
 visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8963674, 0.89636743, 0.89636725, 1)
@@ -239,7 +284,7 @@ theme_override_fonts/font = ExtResource("3_jv4d3")
 theme_override_font_sizes/font_size = 18
 text = "USER CONTROLLER SYSTEM"
 
-[node name="Log_2" type="Label" parent="LoadScreen/Logs/ThirdBlock" unique_id=1828643301]
+[node name="Log_2" type="Label" parent="AspectRatioContainer/LoadScreen/Logs/ThirdBlock" unique_id=1828643301]
 visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8963674, 0.89636743, 0.89636725, 1)
@@ -247,7 +292,7 @@ theme_override_fonts/font = ExtResource("3_jv4d3")
 theme_override_font_sizes/font_size = 18
 text = "Executable and ready for tests."
 
-[node name="Log_3" type="Label" parent="LoadScreen/Logs/ThirdBlock" unique_id=541163016]
+[node name="Log_3" type="Label" parent="AspectRatioContainer/LoadScreen/Logs/ThirdBlock" unique_id=541163016]
 visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8963674, 0.89636743, 0.89636725, 1)
@@ -255,7 +300,7 @@ theme_override_fonts/font = ExtResource("3_jv4d3")
 theme_override_font_sizes/font_size = 18
 text = "Testing controller by 'System'."
 
-[node name="Log_4" type="Label" parent="LoadScreen/Logs/ThirdBlock" unique_id=1370336630]
+[node name="Log_4" type="Label" parent="AspectRatioContainer/LoadScreen/Logs/ThirdBlock" unique_id=1370336630]
 visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8963674, 0.89636743, 0.89636725, 1)
@@ -263,11 +308,11 @@ theme_override_fonts/font = ExtResource("3_jv4d3")
 theme_override_font_sizes/font_size = 18
 text = "User controller done."
 
-[node name="BlockN4" type="VBoxContainer" parent="LoadScreen/Logs" unique_id=1216656345]
+[node name="BlockN4" type="VBoxContainer" parent="AspectRatioContainer/LoadScreen/Logs" unique_id=1216656345]
 visible = false
 layout_mode = 2
 
-[node name="Log_1" type="Label" parent="LoadScreen/Logs/BlockN4" unique_id=313333197]
+[node name="Log_1" type="Label" parent="AspectRatioContainer/LoadScreen/Logs/BlockN4" unique_id=313333197]
 visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8963674, 0.89636743, 0.89636725, 1)
@@ -275,7 +320,7 @@ theme_override_fonts/font = ExtResource("3_jv4d3")
 theme_override_font_sizes/font_size = 16
 text = "REFRESHING SYSTEM PROPERTY CONTROLLER"
 
-[node name="Log_2" type="Label" parent="LoadScreen/Logs/BlockN4" unique_id=1196168857]
+[node name="Log_2" type="Label" parent="AspectRatioContainer/LoadScreen/Logs/BlockN4" unique_id=1196168857]
 visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8963674, 0.89636743, 0.89636725, 1)
@@ -283,7 +328,7 @@ theme_override_fonts/font = ExtResource("3_jv4d3")
 theme_override_font_sizes/font_size = 16
 text = "Trying to execute C:\\System32\\ADP_CONTROL\\PP0_REE\\"
 
-[node name="Log_3" type="Label" parent="LoadScreen/Logs/BlockN4" unique_id=925424771]
+[node name="Log_3" type="Label" parent="AspectRatioContainer/LoadScreen/Logs/BlockN4" unique_id=925424771]
 visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8963674, 0.89636743, 0.89636725, 1)
@@ -291,7 +336,7 @@ theme_override_fonts/font = ExtResource("3_jv4d3")
 theme_override_font_sizes/font_size = 16
 text = "Refreshing..."
 
-[node name="Log_4" type="Label" parent="LoadScreen/Logs/BlockN4" unique_id=1693825602]
+[node name="Log_4" type="Label" parent="AspectRatioContainer/LoadScreen/Logs/BlockN4" unique_id=1693825602]
 visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8963674, 0.89636743, 0.89636725, 1)
@@ -299,42 +344,53 @@ theme_override_fonts/font = ExtResource("3_jv4d3")
 theme_override_font_sizes/font_size = 16
 text = "Done."
 
-[node name="Main" type="PanelContainer" parent="." unique_id=1256485272 node_paths=PackedStringArray("_startTaskButton", "_taskProgress", "_taskNameLabel", "_openCameraButton")]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Main" type="PanelContainer" parent="AspectRatioContainer" unique_id=1256485272 node_paths=PackedStringArray("_startTaskButton", "_taskProgress", "_taskNameLabel", "_taskAction", "_openCameraButton")]
+layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_i3s3x")
 script = ExtResource("4_e6mqj")
 _startTaskButton = NodePath("HBoxContainer/VBoxContainer/HBoxContainer/ProgressStart")
 _taskProgress = NodePath("HBoxContainer/VBoxContainer/HBoxContainer/ProgressBar")
 _taskNameLabel = NodePath("HBoxContainer/VBoxContainer/TaskName")
+_taskAction = NodePath("HBoxContainer/VBoxContainer/State")
 _tasks = Array[Object]([ExtResource("5_4m8fs"), ExtResource("6_jrpk0")])
 _openCameraButton = NodePath("OpenCamera")
 
-[node name="HBoxContainer" type="CenterContainer" parent="Main" unique_id=802589840]
+[node name="HBoxContainer" type="CenterContainer" parent="AspectRatioContainer/Main" unique_id=802589840]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Main/HBoxContainer" unique_id=1539658880]
+[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer/Main/HBoxContainer" unique_id=1539658880]
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="TaskName" type="Label" parent="Main/HBoxContainer/VBoxContainer" unique_id=208564409]
+[node name="TaskName" type="Label" parent="AspectRatioContainer/Main/HBoxContainer/VBoxContainer" unique_id=208564409]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.8411961, 0.8838633, 0.88435775, 1)
-theme_override_font_sizes/font_size = 28
-text = "Task"
+theme_override_colors/font_color = Color(0.55624413, 0.53401965, 0.48725867, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("7_ewvtf")
+theme_override_font_sizes/font_size = 21
+text = "Прогресс"
 uppercase = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Main/HBoxContainer/VBoxContainer" unique_id=1928283534]
+[node name="State" type="Label" parent="AspectRatioContainer/Main/HBoxContainer/VBoxContainer" unique_id=1346316813]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.3072629, 0.3060061, 0.2991291, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("7_ewvtf")
+theme_override_font_sizes/font_size = 21
+text = "В ожидании"
+uppercase = true
+script = ExtResource("8_3qcwo")
+_animationChangeSpeed = 1.3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AspectRatioContainer/Main/HBoxContainer/VBoxContainer" unique_id=1928283534]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="ProgressBar" type="ProgressBar" parent="Main/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=628191403]
-custom_minimum_size = Vector2(420, 40)
+[node name="ProgressBar" type="ProgressBar" parent="AspectRatioContainer/Main/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=628191403]
+custom_minimum_size = Vector2(450, 30)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
@@ -342,106 +398,134 @@ theme_override_colors/font_color = Color(0.91373885, 0.9137387, 0.9137391, 1)
 theme_override_font_sizes/font_size = 25
 theme_override_styles/background = SubResource("StyleBoxFlat_6u82b")
 theme_override_styles/fill = SubResource("StyleBoxFlat_e6mqj")
-value = 2.0
 show_percentage = false
 
-[node name="ProgressStart" type="Button" parent="Main/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=2000497618]
-custom_minimum_size = Vector2(80, 40)
+[node name="ProgressStart" type="Button" parent="AspectRatioContainer/Main/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=2000497618]
+custom_minimum_size = Vector2(120, 30)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_font_sizes/font_size = 21
+theme_override_colors/font_color = Color(0.7877587, 0.7877594, 0.7877589, 1)
+theme_override_fonts/font = ExtResource("7_ewvtf")
+theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_ichqs")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_4m8fs")
 theme_override_styles/hover = SubResource("StyleBoxFlat_jrpk0")
 toggle_mode = true
-text = "START"
+text = "ЗАПУСТИТЬ"
 
-[node name="OpenCamera" type="Button" parent="Main" unique_id=503820645]
+[node name="OpenCamera" type="Button" parent="AspectRatioContainer/Main" unique_id=503820645]
 custom_minimum_size = Vector2(80, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-theme_override_font_sizes/font_size = 21
+theme_override_colors/font_color = Color(0.74278206, 0.7427829, 0.74278235, 1)
+theme_override_fonts/font = ExtResource("7_ewvtf")
+theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_0fxjp")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3pvkb")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ewvtf")
-text = "OPEN CAMERA"
+text = "СИСТЕМА НАБЛЮДЕНИЯ"
 
-[node name="Cameras" type="PanelContainer" parent="." unique_id=1360354825 node_paths=PackedStringArray("_backButton", "_cameraButtons", "_viewport", "_camNameLabel")]
+[node name="ShaderGlobal" type="ColorRect" parent="AspectRatioContainer/Main" unique_id=1586007598]
+material = SubResource("ShaderMaterial_6u82b")
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Cameras" type="PanelContainer" parent="AspectRatioContainer" unique_id=1360354825 node_paths=PackedStringArray("_backButton", "_cameraButtons", "_viewport", "_camNameLabel")]
 visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_vcdtc")
 script = ExtResource("7_jrpk0")
 _backButton = NodePath("VBoxContainer/BackButton")
-_cameraButtons = [NodePath("VBoxContainer/Camera_0"), NodePath("VBoxContainer/Camera_1")]
+_cameraButtons = [NodePath("VBoxContainer/CamButtons/Camera_0"), NodePath("VBoxContainer/CamButtons/Camera_1")]
 _viewport = NodePath("SubViewportContainer/SubViewport")
 _camNameLabel = NodePath("LabelsOverlay/Label")
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="Cameras" unique_id=68836680]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="AspectRatioContainer/Cameras" unique_id=68836680]
 layout_mode = 2
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="Cameras/SubViewportContainer" unique_id=89973478]
+[node name="SubViewport" type="SubViewport" parent="AspectRatioContainer/Cameras/SubViewportContainer" unique_id=89973478]
 handle_input_locally = false
-size = Vector2i(1152, 648)
+size = Vector2i(648, 648)
 render_target_update_mode = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Cameras" unique_id=1562405824]
+[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer/Cameras" unique_id=1562405824]
 layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 4
+size_flags_horizontal = 0
+size_flags_vertical = 8
 theme_override_constants/separation = 15
 
-[node name="Camera_0" type="Button" parent="Cameras/VBoxContainer" unique_id=1510162478]
-custom_minimum_size = Vector2(80, 50)
+[node name="CamButtons" type="HBoxContainer" parent="AspectRatioContainer/Cameras/VBoxContainer" unique_id=590184491]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Camera_0" type="Button" parent="AspectRatioContainer/Cameras/VBoxContainer/CamButtons" unique_id=1510162478]
+custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_fonts/font = ExtResource("3_jv4d3")
-theme_override_font_sizes/font_size = 11
+theme_override_fonts/font = ExtResource("7_ewvtf")
+theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_3qcwo")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_5gfxg")
 theme_override_styles/hover = SubResource("StyleBoxFlat_cy4or")
-text = "OUTDOOR"
+text = "УЛИЦА_1"
 
-[node name="Camera_1" type="Button" parent="Cameras/VBoxContainer" unique_id=1791340688]
-custom_minimum_size = Vector2(80, 50)
+[node name="Camera_1" type="Button" parent="AspectRatioContainer/Cameras/VBoxContainer/CamButtons" unique_id=1791340688]
+custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_fonts/font = ExtResource("3_jv4d3")
-theme_override_font_sizes/font_size = 11
+theme_override_fonts/font = ExtResource("7_ewvtf")
+theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_yj34d")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_n7vx2")
 theme_override_styles/hover = SubResource("StyleBoxFlat_h7ou7")
-text = "CORNER"
+text = "УЛИЦА_2"
 
-[node name="BackButton" type="Button" parent="Cameras/VBoxContainer" unique_id=469437410]
+[node name="BackButton" type="Button" parent="AspectRatioContainer/Cameras/VBoxContainer" unique_id=469437410]
 custom_minimum_size = Vector2(250, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-text = "Back"
+theme_override_fonts/font = ExtResource("7_ewvtf")
+theme_override_font_sizes/font_size = 11
+text = "ВЕРНУТЬСЯ ОБРАТНО"
 
-[node name="LabelsOverlay" type="HBoxContainer" parent="Cameras" unique_id=1939317289]
+[node name="LabelsOverlay" type="HBoxContainer" parent="AspectRatioContainer/Cameras" unique_id=1939317289]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_constants/separation = 150
 
-[node name="Label" type="Label" parent="Cameras/LabelsOverlay" unique_id=318703031]
+[node name="Label" type="Label" parent="AspectRatioContainer/Cameras/LabelsOverlay" unique_id=318703031]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.7427827, 0.7427827, 0.7427826, 1)
-theme_override_fonts/font = ExtResource("3_jv4d3")
-theme_override_font_sizes/font_size = 21
-text = "CAM 01 - OUTDOOR"
+theme_override_colors/font_color = Color(0.86754787, 0.86754787, 0.8675477, 1)
+theme_override_fonts/font = ExtResource("7_ewvtf")
+theme_override_font_sizes/font_size = 20
+text = "КАМЕРА 1: ДВОР"
 
-[node name="Shader" type="ColorRect" parent="Cameras" unique_id=1195395833]
+[node name="Muted2" type="HBoxContainer" parent="AspectRatioContainer/Cameras/LabelsOverlay" unique_id=1805306517]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Muted" type="Label" parent="AspectRatioContainer/Cameras/LabelsOverlay/Muted2" unique_id=1411207556]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.86754787, 0.86754787, 0.8675477, 1)
+theme_override_fonts/font = ExtResource("7_ewvtf")
+theme_override_font_sizes/font_size = 15
+text = "ЗАГЛУШЕН"
+
+[node name="Icon" type="TextureRect" parent="AspectRatioContainer/Cameras/LabelsOverlay/Muted2" unique_id=710650670]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("9_ewvtf")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Shader" type="ColorRect" parent="AspectRatioContainer/Cameras" unique_id=1195395833]
 material = SubResource("ShaderMaterial_3pvkb")
 layout_mode = 2
 mouse_filter = 2

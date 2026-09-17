@@ -4,7 +4,6 @@
 
 [resource]
 script = ExtResource("1_skg77")
-Name = "RewriteDocument"
+Name = "Отредактировать Документ"
 TargetProgress = 70.0
-AcitveSpeed = 2.1
 metadata/_custom_type_script = "uid://47wc73q1atk7"

@@ -41,10 +41,10 @@ public partial class CameraPanel : PanelContainer
 		{
 			
 			case 0:
-				_camNameLabel.Text = "CAM 01 - OUTDOOR";
+				_camNameLabel.Text = "КАМЕРА: УЛИЦА_1";
 			break;
 			case 1:
-				_camNameLabel.Text = "CAM 02 - CORNER";
+				_camNameLabel.Text = "КАМЕРА: УЛИЦА_2";
 			break;
 
 		}

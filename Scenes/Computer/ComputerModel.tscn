@@ -6,20 +6,26 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6u82b"]
 albedo_color = Color(0.66777766, 0.6835617, 0.70557594, 1)
+roughness = 0.4
 
 [sub_resource type="BoxMesh" id="BoxMesh_83fg3"]
 material = SubResource("StandardMaterial3D_6u82b")
-size = Vector3(0.2, 1, 1.7)
+size = Vector3(0.85, 0.75, 0.85)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_83fg3"]
-size = Vector3(0.2, 1, 1.7)
+size = Vector3(0.85, 0.85, 0.85)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ichqs"]
 albedo_color = Color(0.45104015, 0.51312256, 0.56975013, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_6u82b"]
 material = SubResource("StandardMaterial3D_ichqs")
-size = Vector3(0.5, 0.3, 0.8)
+size = Vector3(0.4, 0.3, 0.4)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_8uju4"]
+top_radius = 0.6
+bottom_radius = 0.6
+height = 0.1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_slwep"]
 shading_mode = 0
@@ -27,25 +33,29 @@ albedo_color = Color(0.5593675, 0.65150434, 0.8219772, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_e6mqj"]
 material = SubResource("StandardMaterial3D_slwep")
-size = Vector2(1.5, 0.8)
+size = Vector2(0.65, 0.65)
 
 [node name="Computer" type="StaticBody3D" unique_id=1462816206 node_paths=PackedStringArray("ComputerManageer")]
 script = ExtResource("1_08cn8")
 ComputerManageer = NodePath("CanvasLayer")
 
 [node name="Corpus" type="MeshInstance3D" parent="." unique_id=860607408]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.52, 0)
 mesh = SubResource("BoxMesh_83fg3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=872606351]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.52, 0)
 shape = SubResource("BoxShape3D_83fg3")
 
 [node name="Noshka" type="MeshInstance3D" parent="." unique_id=896046969]
 mesh = SubResource("BoxMesh_6u82b")
 
+[node name="Noshka2" type="MeshInstance3D" parent="." unique_id=483873317]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2126708, 0)
+mesh = SubResource("CylinderMesh_8uju4")
+
 [node name="Monitor" type="MeshInstance3D" parent="." unique_id=717823016]
-transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -0.101915374, 0.6606437, 0)
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -0.45021194, 0.53468037, -0.0077296793)
 mesh = SubResource("QuadMesh_e6mqj")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1553908308 node_paths=PackedStringArray("_interface")]

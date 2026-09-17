@@ -10,6 +10,9 @@ public partial class ComputerMain : PanelContainer
 	[Export] private Button _startTaskButton;
 	[Export] private ProgressBar _taskProgress;
 	[Export] private Label _taskNameLabel;
+	[Export] private StateLabel _taskAction;
+
+
 	[Export] private Godot.Collections.Array<NightTask> _tasks;
 	[Export] private Button _openCameraButton;
 
@@ -18,8 +21,12 @@ public partial class ComputerMain : PanelContainer
 	private int _currentTaskIndex = 0;
 	private NightTask _currentTask;
 
+
+
 	public bool IsOpen = false;
 	private bool _isActiveProgress = false;
+	private float _rawProgress = 0f;
+
 
 	// =============== FAULTH ==============
 	private float _timeToFault = 0f;
@@ -60,18 +67,20 @@ public partial class ComputerMain : PanelContainer
 				return;
 			}
 
-			_taskProgress.Value += _currentTask.DefaulthSpeed * (float)delta;
+			_rawProgress += _currentTask.DefaulthSpeed * (float)delta;
 
 		}
 
 		else
 		{
 			
-			_taskProgress.Value += _currentTask.ActiveSpeed * (float)delta;
+			_rawProgress += _currentTask.ActiveSpeed * (float)delta;
 
 		}
 
-		if (_taskProgress.Value >= _taskProgress.MaxValue)
+		_taskProgress.Value = Mathf.Floor(_rawProgress / 10f) * 10f;
+
+		if (_rawProgress >= _taskProgress.MaxValue)
 		{
 			
 			LoadNextTask();
@@ -89,6 +98,11 @@ public partial class ComputerMain : PanelContainer
 		if (isPressed)
 		{
 			_timeToFault = (float)GD.RandRange(2.0f, 12.0f);
+			_taskAction.ChangeState(StateLabel.State.Progress);
+		}
+		else
+		{
+			_taskAction.ChangeState(StateLabel.State.Stoped);
 		}
 
 	}
@@ -103,7 +117,9 @@ public partial class ComputerMain : PanelContainer
 			_currentTask = _tasks[_currentTaskIndex];
 
 			_taskProgress.MaxValue = _currentTask.TargetProgress;
+
 			_taskProgress.Value = 0;
+			_rawProgress = 0f;
 
 			_taskNameLabel.Text = _currentTask.Name;
 

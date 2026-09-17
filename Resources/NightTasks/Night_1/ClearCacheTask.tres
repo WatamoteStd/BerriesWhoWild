@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_xga4i")
-Name = "Clear Cache"
+Name = "Очистить Данные"
 TargetProgress = 50.0
 DefaulthSpeed = 0.35
 metadata/_custom_type_script = "uid://47wc73q1atk7"

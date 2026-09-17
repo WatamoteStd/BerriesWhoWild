@@ -2,21 +2,29 @@
 
 [ext_resource type="PackedScene" uid="uid://cees02nd3q6po" path="res://Assets/Models/Trees/1/realistic_tree.glb" id="1_6bp64"]
 [ext_resource type="Texture2D" uid="uid://bpufpyfhfvfaf" path="res://Assets/Models/Trees/2/low_poly_forest_tree_pack_0.png" id="1_h1bgf"]
+[ext_resource type="Texture2D" uid="uid://cvl3tnvs7ybr8" path="res://Assets/Textures/BrickWall/color.png" id="1_hibaj"]
 [ext_resource type="Script" uid="uid://dc8upuxpqia7c" path="res://Scripts/Player.cs" id="1_jjgbg"]
+[ext_resource type="Texture2D" uid="uid://bnilvloltdwt2" path="res://Assets/Textures/Ground/color.png" id="1_u50mg"]
 [ext_resource type="PackedScene" uid="uid://btv7tn2ctsr7q" path="res://Assets/Models/LED/led_model.glb" id="2_344ge"]
 [ext_resource type="Texture2D" uid="uid://g7gyxjqwiutq" path="res://Assets/Models/Trees/2/low_poly_forest_tree_pack_1.png" id="2_b3802"]
 [ext_resource type="PackedScene" uid="uid://bx7nhh8oyjqyi" path="res://Scenes/Computer/ComputerModel.tscn" id="2_bo1nx"]
+[ext_resource type="Texture2D" uid="uid://dnupodbp02b4v" path="res://Assets/Textures/Ground/AO.png" id="2_cbgmd"]
+[ext_resource type="Texture2D" uid="uid://do1kv7ao7412e" path="res://Assets/Textures/BrickWall/AO.png" id="2_pdsj5"]
+[ext_resource type="Texture2D" uid="uid://bxrmvxp8pjro0" path="res://Assets/Textures/Ground/normal.png" id="3_1w6v2"]
 [ext_resource type="Script" uid="uid://4o3ukk61hqib" path="res://Scripts/Envirmoment/led/LedController.cs" id="3_d1ilt"]
+[ext_resource type="Texture2D" uid="uid://g8hm0wglofpj" path="res://Assets/Textures/BrickWall/normal.png" id="3_ee4r6"]
 [ext_resource type="Texture2D" uid="uid://yois4ogcrxu1" path="res://Assets/Models/Trees/2/low_poly_forest_tree_pack_2.png" id="3_fevyy"]
-[ext_resource type="PackedScene" uid="uid://dd22okpcvnqbw" path="res://Scenes/Characters/Entity_1/Monster_1.tscn" id="3_jjvhh"]
 [ext_resource type="Texture2D" uid="uid://csu3n7juqxd72" path="res://Assets/Models/LED/Rope/power_lines_voltage_electricity_0.png" id="4_6iyac"]
+[ext_resource type="Texture2D" uid="uid://clfci5yyxcgub" path="res://Assets/Textures/BrickWall/Rought.png" id="4_gt3je"]
 [ext_resource type="Texture2D" uid="uid://dyui77ks2hwn7" path="res://Assets/Models/Trees/2/low_poly_forest_tree_pack_6.png" id="4_hibaj"]
 [ext_resource type="Script" uid="uid://xpeu7qg8nh4j" path="res://Scripts/Characters/MonsterPoint.cs" id="4_jjvhh"]
+[ext_resource type="Texture2D" uid="uid://c0ej5qm7wara5" path="res://Assets/Textures/Ground/rought.png" id="4_ueoa1"]
 [ext_resource type="Texture2D" uid="uid://dwcmpc3sko7ug" path="res://Assets/Models/LED/Rope/power_lines_voltage_electricity_1.png" id="5_fdnlq"]
 [ext_resource type="Script" uid="uid://balmq873ok0cv" path="res://Scripts/Computer/System/CameraManager.cs" id="5_kry3j"]
 [ext_resource type="Texture2D" uid="uid://cw50jku1n4vh5" path="res://Assets/Models/Trees/2/low_poly_forest_tree_pack_7.png" id="5_pdsj5"]
 [ext_resource type="Texture2D" uid="uid://4habxt3unikp" path="res://Assets/Models/Trees/2/low_poly_forest_tree_pack_8.png" id="6_ee4r6"]
 [ext_resource type="Texture2D" uid="uid://q0j4m7e6kws7" path="res://Assets/Models/LED/Rope/power_lines_voltage_electricity_2.png" id="6_jkdf5"]
+[ext_resource type="PackedScene" uid="uid://grcq0nyy2aqk" path="res://Assets/Models/Lamp/ship_lamp (1).glb" id="13_pdsj5"]
 
 [sub_resource type="Sky" id="Sky_6u82b"]
 
@@ -33,22 +41,15 @@ glow_hdr_threshold = 0.8
 fog_mode = 1
 fog_density = 1.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_83fg3"]
-albedo_color = Color(0.7647059, 0, 0.76862746, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7u77a"]
-albedo_color = Color(0.7539839, 0.75398386, 0.75398386, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6u82b"]
-transparency = 1
-albedo_color = Color(0.65882355, 0.77254903, 0.8509804, 0.20392157)
-
-[sub_resource type="BoxMesh" id="BoxMesh_83fg3"]
-material = SubResource("StandardMaterial3D_6u82b")
-size = Vector3(0.5, 3.7, 2.2)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ichqs"]
-albedo_color = Color(0.2989695, 0.34731442, 0.087570645, 1)
+albedo_texture = ExtResource("1_u50mg")
+roughness_texture = ExtResource("4_ueoa1")
+normal_enabled = true
+normal_texture = ExtResource("3_1w6v2")
+ao_enabled = true
+ao_texture = ExtResource("2_cbgmd")
+uv1_scale = Vector3(0.775, 0.775, 0.775)
+uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_6u82b"]
 material = SubResource("StandardMaterial3D_ichqs")
@@ -667,115 +668,29 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_otg4y")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ewvtf"]
+albedo_color = Color(0.79907435, 0.7990745, 0.7990744, 1)
+albedo_texture = ExtResource("1_hibaj")
+roughness_texture = ExtResource("4_gt3je")
+normal_enabled = true
+normal_texture = ExtResource("3_ee4r6")
+ao_enabled = true
+ao_texture = ExtResource("2_pdsj5")
+uv1_scale = Vector3(0.605, 0.605, 0.605)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_83fg3"]
+albedo_color = Color(0.7647059, 0, 0.76862746, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7u77a"]
+albedo_color = Color(0.7539839, 0.75398386, 0.75398386, 1)
+
 [node name="World" type="Node3D" unique_id=1693206707]
 
 [node name="Envirmoment" type="Node3D" parent="." unique_id=1817716122]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Envirmoment" unique_id=475857575]
 environment = SubResource("Environment_83fg3")
-
-[node name="Core" type="CSGCombiner3D" parent="Envirmoment" unique_id=1982695206]
-use_collision = true
-metadata/_edit_lock_ = true
-
-[node name="Floor" type="CSGBox3D" parent="Envirmoment/Core" unique_id=2042826249]
-size = Vector3(25, 0.1, 25)
-metadata/_edit_lock_ = true
-
-[node name="Floor2" type="CSGBox3D" parent="Envirmoment/Core" unique_id=2045159373]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-size = Vector3(25, 0.1, 25)
-metadata/_edit_lock_ = true
-
-[node name="Wall" type="CSGBox3D" parent="Envirmoment/Core" unique_id=1713493342]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.058, 2.575, 12)
-size = Vector3(30, 5.149, 0.5)
-metadata/_edit_lock_ = true
-
-[node name="Wall2" type="CSGBox3D" parent="Envirmoment/Core" unique_id=117356936]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -12)
-size = Vector3(30, 5, 0.5)
-metadata/_edit_lock_ = true
-
-[node name="Wall3" type="CSGBox3D" parent="Envirmoment/Core" unique_id=126249204]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2.5, 0)
-size = Vector3(0.5, 5, 30)
-metadata/_edit_lock_ = true
-
-[node name="Wall4" type="CSGBox3D" parent="Envirmoment/Core" unique_id=1355890882]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.440104, 2.4791884, 0)
-size = Vector3(0.5, 5, 30)
-metadata/_edit_lock_ = true
-
-[node name="Door" type="CSGBox3D" parent="Envirmoment/Core" unique_id=734884628]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.48483, 1.8718038, -8.575916)
-operation = 2
-size = Vector3(0.7, 3.7, 2.2)
-metadata/_edit_lock_ = true
-
-[node name="WorkZone" type="CSGCombiner3D" parent="Envirmoment" unique_id=1046272937]
-use_collision = true
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Envirmoment/WorkZone" unique_id=197335203]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.016706, 0.66624784, 1.523515)
-size = Vector3(0.095214844, 1.3379822, 5.29895)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Envirmoment/WorkZone" unique_id=1292899252]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.579773, 0.50607145, 1.5249395)
-size = Vector3(1, 1, 5.2819824)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Envirmoment/WorkZone" unique_id=1076386992]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.39887, 1.3027825, 1.4698598)
-shadow_enabled = true
-omni_range = 3.0193481
-omni_attenuation = -0.525
-
-[node name="Clothes" type="Node3D" parent="Envirmoment" unique_id=442779057]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.657005)
-
-[node name="Cloth_1" type="CSGCombiner3D" parent="Envirmoment/Clothes" unique_id=1977028730]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8274527, 1.8320619, 0.61288166)
-use_collision = true
-
-[node name="First_1" type="CSGBox3D" parent="Envirmoment/Clothes/Cloth_1" unique_id=1999504567]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7073946, 0, 0)
-size = Vector3(0.2, 3.6, 3)
-material = SubResource("StandardMaterial3D_83fg3")
-
-[node name="First_2" type="CSGBox3D" parent="Envirmoment/Clothes/Cloth_1" unique_id=908736060]
-size = Vector3(0.2, 3.6, 3)
-material = SubResource("StandardMaterial3D_83fg3")
-
-[node name="Door" type="CSGBox3D" parent="Envirmoment/Clothes/Cloth_1" unique_id=2035798002]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3141472, 0.047999263, -1.3722687)
-size = Vector3(2.6, 3.325122, 0.05)
-material = SubResource("StandardMaterial3D_7u77a")
-
-[node name="Cloth_2" type="CSGCombiner3D" parent="Envirmoment/Clothes" unique_id=25903490]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07369375, 1.8320619, 0.61288166)
-use_collision = true
-
-[node name="First_1" type="CSGBox3D" parent="Envirmoment/Clothes/Cloth_2" unique_id=396807404]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6547909, 0, 0)
-size = Vector3(0.2, 3.6, 3)
-material = SubResource("StandardMaterial3D_83fg3")
-
-[node name="Door" type="CSGBox3D" parent="Envirmoment/Clothes/Cloth_2" unique_id=1321184999]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3141472, 0.047999263, -1.3722687)
-size = Vector3(2.6, 3.325122, 0.05)
-material = SubResource("StandardMaterial3D_7u77a")
-
-[node name="OutsideLight" type="OmniLight3D" parent="Envirmoment" unique_id=1846672101]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8683815, 4.0048327, -8.770395)
-light_color = Color(0.7475936, 0.89717406, 0.88624173, 1)
-light_energy = 2.067
-shadow_enabled = true
-omni_range = 6.0
-omni_attenuation = 1.934
-
-[node name="EnterDoor" type="MeshInstance3D" parent="Envirmoment" unique_id=1070464708]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4756975, 1.8909116, -8.54755)
-mesh = SubResource("BoxMesh_83fg3")
 
 [node name="Outside" type="Node3D" parent="Envirmoment" unique_id=281393255]
 
@@ -1128,6 +1043,111 @@ spot_angle_attenuation = 2.928175
 transform = Transform3D(-8.7422775e-10, 0, 0.02, 0, 0.02, 0, -0.02, 0, -8.7422775e-10, -19.680035, 16.97797, 6.8537064)
 mesh = SubResource("ArrayMesh_8igbb")
 
+[node name="Building" type="Node3D" parent="Envirmoment" unique_id=21895134]
+
+[node name="Sketchfab_Scene" parent="Envirmoment/Building" unique_id=1009299981 instance=ExtResource("13_pdsj5")]
+transform = Transform3D(3.0570967e-15, -6.9938224e-08, -1.6, -1.6, -6.9938224e-08, 0, -6.9938224e-08, 1.6, -6.9938224e-08, -12.760885, 4.0541353, -8.662568)
+
+[node name="Core" type="CSGCombiner3D" parent="Envirmoment/Building" unique_id=1982695206]
+use_collision = true
+metadata/_edit_lock_ = true
+
+[node name="Floor" type="CSGBox3D" parent="Envirmoment/Building/Core" unique_id=2042826249]
+size = Vector3(25, 0.1, 25)
+metadata/_edit_lock_ = true
+
+[node name="Floor2" type="CSGBox3D" parent="Envirmoment/Building/Core" unique_id=2045159373]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+size = Vector3(25, 0.1, 25)
+metadata/_edit_lock_ = true
+
+[node name="Wall" type="CSGBox3D" parent="Envirmoment/Building/Core" unique_id=1713493342]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.058, 2.575, 12)
+size = Vector3(30, 5.149, 0.5)
+metadata/_edit_lock_ = true
+
+[node name="Wall2" type="CSGBox3D" parent="Envirmoment/Building/Core" unique_id=117356936]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -12)
+size = Vector3(30, 5, 0.5)
+metadata/_edit_lock_ = true
+
+[node name="Wall3" type="CSGBox3D" parent="Envirmoment/Building/Core" unique_id=126249204]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2.5, 0)
+size = Vector3(0.5, 5, 30)
+metadata/_edit_lock_ = true
+
+[node name="Wall4" type="CSGBox3D" parent="Envirmoment/Building/Core" unique_id=1355890882]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.440104, 2.4791884, 0)
+size = Vector3(0.5, 5, 30)
+material = SubResource("StandardMaterial3D_ewvtf")
+metadata/_edit_lock_ = true
+
+[node name="Door" type="CSGBox3D" parent="Envirmoment/Building/Core" unique_id=734884628]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.48483, 1.8718038, -8.575916)
+operation = 2
+size = Vector3(0.7, 3.7, 2.2)
+metadata/_edit_lock_ = true
+
+[node name="WorkZone" type="CSGCombiner3D" parent="Envirmoment/Building" unique_id=1046272937]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Envirmoment/Building/WorkZone" unique_id=197335203]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.016706, 0.66624784, 1.523515)
+size = Vector3(0.095214844, 1.3379822, 5.29895)
+
+[node name="TableWorlZone" type="CSGBox3D" parent="Envirmoment/Building/WorkZone" unique_id=1292899252]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.73103, 0.50607145, 1.5249395)
+size = Vector3(1.35, 1, 5.282)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Envirmoment/Building/WorkZone" unique_id=1076386992]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.39887, 1.3027825, 1.4698598)
+shadow_enabled = true
+omni_range = 3.0193481
+omni_attenuation = -0.525
+
+[node name="Clothes" type="Node3D" parent="Envirmoment/Building" unique_id=442779057]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.657005)
+
+[node name="Cloth_1" type="CSGCombiner3D" parent="Envirmoment/Building/Clothes" unique_id=1977028730]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8274527, 1.8320619, 0.61288166)
+use_collision = true
+
+[node name="First_1" type="CSGBox3D" parent="Envirmoment/Building/Clothes/Cloth_1" unique_id=1999504567]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7073946, 0, 0)
+size = Vector3(0.2, 3.6, 3)
+material = SubResource("StandardMaterial3D_83fg3")
+
+[node name="First_2" type="CSGBox3D" parent="Envirmoment/Building/Clothes/Cloth_1" unique_id=908736060]
+size = Vector3(0.2, 3.6, 3)
+material = SubResource("StandardMaterial3D_83fg3")
+
+[node name="Door" type="CSGBox3D" parent="Envirmoment/Building/Clothes/Cloth_1" unique_id=2035798002]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3141472, 0.047999263, -1.3722687)
+size = Vector3(2.6, 3.325122, 0.05)
+material = SubResource("StandardMaterial3D_7u77a")
+
+[node name="Cloth_2" type="CSGCombiner3D" parent="Envirmoment/Building/Clothes" unique_id=25903490]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07369375, 1.8320619, 0.61288166)
+use_collision = true
+
+[node name="First_1" type="CSGBox3D" parent="Envirmoment/Building/Clothes/Cloth_2" unique_id=396807404]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6547909, 0, 0)
+size = Vector3(0.2, 3.6, 3)
+material = SubResource("StandardMaterial3D_83fg3")
+
+[node name="Door" type="CSGBox3D" parent="Envirmoment/Building/Clothes/Cloth_2" unique_id=1321184999]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3141472, 0.047999263, -1.3722687)
+size = Vector3(2.6, 3.325122, 0.05)
+material = SubResource("StandardMaterial3D_7u77a")
+
+[node name="OutsideLight" type="OmniLight3D" parent="Envirmoment/Building" unique_id=1846672101]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.445896, 4.0048327, -8.707346)
+light_color = Color(0.7475936, 0.89717406, 0.88624173, 1)
+light_energy = 2.067
+shadow_enabled = true
+omni_range = 6.0
+omni_attenuation = 1.934
+
 [node name="Player" type="Node3D" parent="." unique_id=128358299 node_paths=PackedStringArray("_camera", "_raycast", "_flashlight")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.409, 2.6618724, 1.5381161)
 script = ExtResource("1_jjgbg")
@@ -1157,10 +1177,10 @@ shadow_normal_bias = 2.0
 spot_range = 50.0
 spot_attenuation = 1.27
 spot_angle = 25.0
-spot_angle_attenuation = 1.2583739
+spot_angle_attenuation = 2.190956
 
 [node name="Computer" parent="." unique_id=1462816206 instance=ExtResource("2_bo1nx")]
-transform = Transform3D(-0.8675878, 0, 0.49728405, 0, 1, 0, -0.49728405, 0, -0.8675878, 8.513107, 1.1560711, 0.20459664)
+transform = Transform3D(-0.86071277, 0, 0.5090909, 0, 1, 0, -0.5090909, 0, -0.86071277, 8.662368, 1.2660869, 0.20459664)
 
 [node name="Monster_1_MovePoints" type="Node3D" parent="." unique_id=1603293529]
 
@@ -1168,10 +1188,6 @@ transform = Transform3D(-0.8675878, 0, 0.49728405, 0, 1, 0, -0.49728405, 0, -0.8
 transform = Transform3D(-1.8, 0, 1.57361e-07, 0, 1.8, 0, -1.57361e-07, 0, -1.8, -13.196309, 0, -11.52284)
 script = ExtResource("4_jjvhh")
 AnimationName = "LookFromCorner"
-
-[node name="Monster_1" parent="." unique_id=2107195634 node_paths=PackedStringArray("_movePoints") instance=ExtResource("3_jjvhh")]
-transform = Transform3D(-7.86805e-08, 0, 1.8, 0, 1.8, 0, -1.8, 0, -7.86805e-08, -18.291138, 0, -2.8398194)
-_movePoints = [NodePath("../Monster_1_MovePoints/Point_1")]
 
 [node name="Camera_Points" type="Node3D" parent="." unique_id=889213744]
 

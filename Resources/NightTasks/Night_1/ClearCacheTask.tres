@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="NightTask" format=3 uid="uid://dy5ppcautp54f"]
+
+[ext_resource type="Script" uid="uid://47wc73q1atk7" path="res://Resources/NightTasks/NightTask.cs" id="1_xga4i"]
+
+[resource]
+script = ExtResource("1_xga4i")
+Name = "Clear Cache"
+TargetProgress = 50.0
+DefaulthSpeed = 0.35
+metadata/_custom_type_script = "uid://47wc73q1atk7"

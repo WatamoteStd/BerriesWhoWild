@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="NightTask" format=3 uid="uid://bblotk6l0kfjo"]
+
+[ext_resource type="Script" uid="uid://47wc73q1atk7" path="res://Resources/NightTasks/NightTask.cs" id="1_skg77"]
+
+[resource]
+script = ExtResource("1_skg77")
+Name = "RewriteDocument"
+TargetProgress = 70.0
+AcitveSpeed = 2.1
+metadata/_custom_type_script = "uid://47wc73q1atk7"

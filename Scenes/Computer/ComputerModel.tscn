@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bx7nhh8oyjqyi"]
+
+[ext_resource type="Script" uid="uid://1uxwkl03c4m6" path="res://Scripts/Computer/ComputerModel.cs" id="1_08cn8"]
+[ext_resource type="PackedScene" uid="uid://bous4x5ch7keh" path="res://Scenes/Computer/Interface.tscn" id="1_slwep"]
+[ext_resource type="Script" uid="uid://jsk3gmqs5vti" path="res://Scripts/Computer/ComputerCanvas.cs" id="2_r8o4i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6u82b"]
+albedo_color = Color(0.66777766, 0.6835617, 0.70557594, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_83fg3"]
+material = SubResource("StandardMaterial3D_6u82b")
+size = Vector3(0.2, 1, 1.7)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_83fg3"]
+size = Vector3(0.2, 1, 1.7)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ichqs"]
+albedo_color = Color(0.45104015, 0.51312256, 0.56975013, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6u82b"]
+material = SubResource("StandardMaterial3D_ichqs")
+size = Vector3(0.5, 0.3, 0.8)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_slwep"]
+shading_mode = 0
+albedo_color = Color(0.5593675, 0.65150434, 0.8219772, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_e6mqj"]
+material = SubResource("StandardMaterial3D_slwep")
+size = Vector2(1.5, 0.8)
+
+[node name="Computer" type="StaticBody3D" unique_id=1462816206 node_paths=PackedStringArray("ComputerManageer")]
+script = ExtResource("1_08cn8")
+ComputerManageer = NodePath("CanvasLayer")
+
+[node name="Corpus" type="MeshInstance3D" parent="." unique_id=860607408]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 0)
+mesh = SubResource("BoxMesh_83fg3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=872606351]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 0)
+shape = SubResource("BoxShape3D_83fg3")
+
+[node name="Noshka" type="MeshInstance3D" parent="." unique_id=896046969]
+mesh = SubResource("BoxMesh_6u82b")
+
+[node name="Monitor" type="MeshInstance3D" parent="." unique_id=717823016]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -0.101915374, 0.6606437, 0)
+mesh = SubResource("QuadMesh_e6mqj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1553908308 node_paths=PackedStringArray("_interface")]
+layer = 10
+script = ExtResource("2_r8o4i")
+_interface = NodePath("Display")
+
+[node name="Display" parent="CanvasLayer" unique_id=1810904363 instance=ExtResource("1_slwep")]

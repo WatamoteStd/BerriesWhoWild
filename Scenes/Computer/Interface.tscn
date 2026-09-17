@@ -1,0 +1,447 @@
+[gd_scene format=3 uid="uid://bous4x5ch7keh"]
+
+[ext_resource type="Script" uid="uid://bs4kcyij2na5m" path="res://Scripts/Computer/ComputerInterface.cs" id="1_bws1p"]
+[ext_resource type="Script" uid="uid://daouay7sxxdk2" path="res://Scripts/Computer/System/LoadScreen.cs" id="2_e6mqj"]
+[ext_resource type="FontFile" uid="uid://cxhuyt6wut3gm" path="res://Assets/Fonts/8bitoperator/8bitoperator.ttf" id="3_jv4d3"]
+[ext_resource type="Script" uid="uid://d0evlksef60sv" path="res://Scripts/Computer/System/ComputerMain.cs" id="4_e6mqj"]
+[ext_resource type="Resource" uid="uid://dy5ppcautp54f" path="res://Resources/NightTasks/Night_1/ClearCacheTask.tres" id="5_4m8fs"]
+[ext_resource type="Resource" uid="uid://bblotk6l0kfjo" path="res://Resources/NightTasks/Night_1/RewriteDocumentTask.tres" id="6_jrpk0"]
+[ext_resource type="Script" uid="uid://bh2ixat3nxqj2" path="res://Scripts/Computer/System/CameraPanel.cs" id="7_jrpk0"]
+[ext_resource type="Shader" uid="uid://ncudkmmnw6bf" path="res://Assets/Shaders/cameraShader_V3.gdshader" id="8_0fxjp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83fg3"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(0.075623, 0.16581434, 0.29210338, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i3s3x"]
+bg_color = Color(0.04546591, 0.07144385, 0.07665043, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6u82b"]
+bg_color = Color(0.16433325, 0.2575978, 0.20383507, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e6mqj"]
+bg_color = Color(0.2031681, 0.3806352, 0.2660983, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ichqs"]
+bg_color = Color(0.18957847, 0.38509703, 0.49301153, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4m8fs"]
+bg_color = Color(0.10564955, 0.23973796, 0.3145017, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jrpk0"]
+bg_color = Color(0.22102791, 0.43826342, 0.5602735, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0fxjp"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(0.16178882, 0.22128883, 0.2297906, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3pvkb"]
+bg_color = Color(0.114255376, 0.16084442, 0.17015973, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ewvtf"]
+bg_color = Color(0.19382033, 0.2610247, 0.27446896, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vcdtc"]
+bg_color = Color(0.1618138, 0.18695155, 0.17753065, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3qcwo"]
+bg_color = Color(0.1081252, 0.12597346, 0.13199562, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.78825754, 0.80947864, 0.8158074, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5gfxg"]
+bg_color = Color(0.07709607, 0.08972097, 0.09603294, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.68294895, 0.7094206, 0.71998984, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cy4or"]
+bg_color = Color(0.14557073, 0.16454923, 0.17403933, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.78825754, 0.80947864, 0.8158074, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yj34d"]
+bg_color = Color(0.1081252, 0.12597346, 0.13199562, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.78825754, 0.80947864, 0.8158074, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n7vx2"]
+bg_color = Color(0.07709607, 0.08972097, 0.09603294, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.68294895, 0.7094206, 0.71998984, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h7ou7"]
+bg_color = Color(0.14557073, 0.16454923, 0.17403933, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.78825754, 0.80947864, 0.8158074, 1)
+border_blend = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3pvkb"]
+shader = ExtResource("8_0fxjp")
+shader_parameter/exposure = 1.0
+shader_parameter/contrast = 1.05
+shader_parameter/saturation = 1.382000018145
+shader_parameter/enable_pixelate = true
+shader_parameter/pixel_factor = 1.1170000055575
+shader_parameter/enable_posterize = true
+shader_parameter/color_levels = 16.000000665
+shader_parameter/dither_strength = 0.7030000333925
+shader_parameter/chrom_aberration = 0.010000000475
+shader_parameter/vignette_strength = 1.1850000562875
+shader_parameter/grain_strength = 0.25
+shader_parameter/tint_strength = 0.022000001045
+shader_parameter/scanline_density = 600.0
+shader_parameter/scanline_strength = 0.15
+shader_parameter/glitch_strength = 0.12
+shader_parameter/glitch_speed = 3.0
+shader_parameter/viewport_size_override = Vector2(0, 0)
+
+[node name="Display" type="Control" unique_id=1810904363 node_paths=PackedStringArray("_loadScreen", "_workWindow", "_cameraWindow")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bws1p")
+_loadScreen = NodePath("LoadScreen")
+_workWindow = NodePath("Main")
+_cameraWindow = NodePath("Cameras")
+
+[node name="LoadScreen" type="PanelContainer" parent="." unique_id=1682642494]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_83fg3")
+script = ExtResource("2_e6mqj")
+
+[node name="Logs" type="VBoxContainer" parent="LoadScreen" unique_id=392809362]
+layout_mode = 2
+theme_override_constants/separation = 35
+
+[node name="StartUpText" type="Label" parent="LoadScreen/Logs" unique_id=2050983973]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8963674, 0.89636743, 0.89636725, 1)
+theme_override_fonts/font = ExtResource("3_jv4d3")
+theme_override_font_sizes/font_size = 24
+text = "System Starting.."
+
+[node name="FirstBlock" type="VBoxContainer" parent="LoadScreen/Logs" unique_id=1277246091]
+layout_mode = 2
+
+[node name="Log_1" type="Label" parent="LoadScreen/Logs/FirstBlock" unique_id=50415207]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8963674, 0.89636743, 0.89636725, 1)
+theme_override_fonts/font = ExtResource("3_jv4d3")
+theme_override_font_sizes/font_size = 18
+text = "HDD CONTROLLER IS OK."
+
+[node name="Log_2" type="Label" parent="LoadScreen/Logs/FirstBlock" unique_id=2104705575]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8963674, 0.89636743, 0.89636725, 1)
+theme_override_fonts/font = ExtResource("3_jv4d3")
+theme_override_font_sizes/font_size = 18
+text = "Directory cache fixed."
+
+[node name="Log_3" type="Label" parent="LoadScreen/Logs/FirstBlock" unique_id=831354656]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8963674, 0.89636743, 0.89636725, 1)
+theme_override_fonts/font = ExtResource("3_jv4d3")
+theme_override_font_sizes/font_size = 18
+text = "Migrating to C:\\System32\\ADR_TOx64\\CLAS_SIFO"
+
+[node name="Log_4" type="Label" parent="LoadScreen/Logs/FirstBlock" unique_id=972833191]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8963674, 0.89636743, 0.89636725, 1)
+theme_override_fonts/font = ExtResource("3_jv4d3")
+theme_override_font_sizes/font_size = 18
+text = "Memory aligment finished done."
+
+[node name="SecoundBlock" type="VBoxContainer" parent="LoadScreen/Logs" unique_id=52085103]
+layout_mode = 2
+
+[node name="Log_1" type="Label" parent="LoadScreen/Logs/SecoundBlock" unique_id=654053754]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8963674, 0.89636743, 0.89636725, 1)
+theme_override_fonts/font = ExtResource("3_jv4d3")
+theme_override_font_sizes/font_size = 18
+text = "PROCESSOR CONTROLLER REFRESHING RENDER PROPERTY"
+
+[node name="Log_2" type="Label" parent="LoadScreen/Logs/SecoundBlock" unique_id=630049488]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8963674, 0.89636743, 0.89636725, 1)
+theme_override_fonts/font = ExtResource("3_jv4d3")
+theme_override_font_sizes/font_size = 18
+text = "Trying to execute C:\\System32\\AdaptiveRender\\Property.cfg"
+
+[node name="Log_3" type="Label" parent="LoadScreen/Logs/SecoundBlock" unique_id=102313]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8963674, 0.89636743, 0.89636725, 1)
+theme_override_fonts/font = ExtResource("3_jv4d3")
+theme_override_font_sizes/font_size = 18
+text = "Trying to execute C:\\System32\\AdaptiveRender\\bin\\"
+
+[node name="Log_4" type="Label" parent="LoadScreen/Logs/SecoundBlock" unique_id=569425441]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8963674, 0.89636743, 0.89636725, 1)
+theme_override_fonts/font = ExtResource("3_jv4d3")
+theme_override_font_sizes/font_size = 18
+text = "Processor controller finished render."
+
+[node name="ThirdBlock" type="VBoxContainer" parent="LoadScreen/Logs" unique_id=632905246]
+layout_mode = 2
+
+[node name="Log_1" type="Label" parent="LoadScreen/Logs/ThirdBlock" unique_id=368785959]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8963674, 0.89636743, 0.89636725, 1)
+theme_override_fonts/font = ExtResource("3_jv4d3")
+theme_override_font_sizes/font_size = 18
+text = "USER CONTROLLER SYSTEM"
+
+[node name="Log_2" type="Label" parent="LoadScreen/Logs/ThirdBlock" unique_id=1828643301]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8963674, 0.89636743, 0.89636725, 1)
+theme_override_fonts/font = ExtResource("3_jv4d3")
+theme_override_font_sizes/font_size = 18
+text = "Executable and ready for tests."
+
+[node name="Log_3" type="Label" parent="LoadScreen/Logs/ThirdBlock" unique_id=541163016]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8963674, 0.89636743, 0.89636725, 1)
+theme_override_fonts/font = ExtResource("3_jv4d3")
+theme_override_font_sizes/font_size = 18
+text = "Testing controller by 'System'."
+
+[node name="Log_4" type="Label" parent="LoadScreen/Logs/ThirdBlock" unique_id=1370336630]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8963674, 0.89636743, 0.89636725, 1)
+theme_override_fonts/font = ExtResource("3_jv4d3")
+theme_override_font_sizes/font_size = 18
+text = "User controller done."
+
+[node name="BlockN4" type="VBoxContainer" parent="LoadScreen/Logs" unique_id=1216656345]
+visible = false
+layout_mode = 2
+
+[node name="Log_1" type="Label" parent="LoadScreen/Logs/BlockN4" unique_id=313333197]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8963674, 0.89636743, 0.89636725, 1)
+theme_override_fonts/font = ExtResource("3_jv4d3")
+theme_override_font_sizes/font_size = 16
+text = "REFRESHING SYSTEM PROPERTY CONTROLLER"
+
+[node name="Log_2" type="Label" parent="LoadScreen/Logs/BlockN4" unique_id=1196168857]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8963674, 0.89636743, 0.89636725, 1)
+theme_override_fonts/font = ExtResource("3_jv4d3")
+theme_override_font_sizes/font_size = 16
+text = "Trying to execute C:\\System32\\ADP_CONTROL\\PP0_REE\\"
+
+[node name="Log_3" type="Label" parent="LoadScreen/Logs/BlockN4" unique_id=925424771]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8963674, 0.89636743, 0.89636725, 1)
+theme_override_fonts/font = ExtResource("3_jv4d3")
+theme_override_font_sizes/font_size = 16
+text = "Refreshing..."
+
+[node name="Log_4" type="Label" parent="LoadScreen/Logs/BlockN4" unique_id=1693825602]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8963674, 0.89636743, 0.89636725, 1)
+theme_override_fonts/font = ExtResource("3_jv4d3")
+theme_override_font_sizes/font_size = 16
+text = "Done."
+
+[node name="Main" type="PanelContainer" parent="." unique_id=1256485272 node_paths=PackedStringArray("_startTaskButton", "_taskProgress", "_taskNameLabel", "_openCameraButton")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_i3s3x")
+script = ExtResource("4_e6mqj")
+_startTaskButton = NodePath("HBoxContainer/VBoxContainer/HBoxContainer/ProgressStart")
+_taskProgress = NodePath("HBoxContainer/VBoxContainer/HBoxContainer/ProgressBar")
+_taskNameLabel = NodePath("HBoxContainer/VBoxContainer/TaskName")
+_tasks = Array[Object]([ExtResource("5_4m8fs"), ExtResource("6_jrpk0")])
+_openCameraButton = NodePath("OpenCamera")
+
+[node name="HBoxContainer" type="CenterContainer" parent="Main" unique_id=802589840]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main/HBoxContainer" unique_id=1539658880]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="TaskName" type="Label" parent="Main/HBoxContainer/VBoxContainer" unique_id=208564409]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.8411961, 0.8838633, 0.88435775, 1)
+theme_override_font_sizes/font_size = 28
+text = "Task"
+uppercase = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main/HBoxContainer/VBoxContainer" unique_id=1928283534]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ProgressBar" type="ProgressBar" parent="Main/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=628191403]
+custom_minimum_size = Vector2(420, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.91373885, 0.9137387, 0.9137391, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/background = SubResource("StyleBoxFlat_6u82b")
+theme_override_styles/fill = SubResource("StyleBoxFlat_e6mqj")
+value = 2.0
+show_percentage = false
+
+[node name="ProgressStart" type="Button" parent="Main/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=2000497618]
+custom_minimum_size = Vector2(80, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_ichqs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4m8fs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jrpk0")
+toggle_mode = true
+text = "START"
+
+[node name="OpenCamera" type="Button" parent="Main" unique_id=503820645]
+custom_minimum_size = Vector2(80, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_0fxjp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3pvkb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ewvtf")
+text = "OPEN CAMERA"
+
+[node name="Cameras" type="PanelContainer" parent="." unique_id=1360354825 node_paths=PackedStringArray("_backButton", "_cameraButtons", "_viewport", "_camNameLabel")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vcdtc")
+script = ExtResource("7_jrpk0")
+_backButton = NodePath("VBoxContainer/BackButton")
+_cameraButtons = [NodePath("VBoxContainer/Camera_0"), NodePath("VBoxContainer/Camera_1")]
+_viewport = NodePath("SubViewportContainer/SubViewport")
+_camNameLabel = NodePath("LabelsOverlay/Label")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Cameras" unique_id=68836680]
+layout_mode = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="Cameras/SubViewportContainer" unique_id=89973478]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Cameras" unique_id=1562405824]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="Camera_0" type="Button" parent="Cameras/VBoxContainer" unique_id=1510162478]
+custom_minimum_size = Vector2(80, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_jv4d3")
+theme_override_font_sizes/font_size = 11
+theme_override_styles/normal = SubResource("StyleBoxFlat_3qcwo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5gfxg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cy4or")
+text = "OUTDOOR"
+
+[node name="Camera_1" type="Button" parent="Cameras/VBoxContainer" unique_id=1791340688]
+custom_minimum_size = Vector2(80, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_jv4d3")
+theme_override_font_sizes/font_size = 11
+theme_override_styles/normal = SubResource("StyleBoxFlat_yj34d")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n7vx2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h7ou7")
+text = "CORNER"
+
+[node name="BackButton" type="Button" parent="Cameras/VBoxContainer" unique_id=469437410]
+custom_minimum_size = Vector2(250, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Back"
+
+[node name="LabelsOverlay" type="HBoxContainer" parent="Cameras" unique_id=1939317289]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="Cameras/LabelsOverlay" unique_id=318703031]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7427827, 0.7427827, 0.7427826, 1)
+theme_override_fonts/font = ExtResource("3_jv4d3")
+theme_override_font_sizes/font_size = 21
+text = "CAM 01 - OUTDOOR"
+
+[node name="Shader" type="ColorRect" parent="Cameras" unique_id=1195395833]
+material = SubResource("ShaderMaterial_3pvkb")
+layout_mode = 2
+mouse_filter = 2

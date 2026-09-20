@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq5l62tx3n0dw"
-path.s3tc="res://.godot/imported/cookie_2.jpg-71f4def4736cd1d25d31fb085cd35353.s3tc.ctex"
+uid="uid://c4nbewymaxfvy"
+path.s3tc="res://.godot/imported/rust-desk-fanFix_Image_22.png-c2f67745dfea5332a8a81e4daba60669.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "7c41ad30ef5dbdb3bccf8a90ab85f604"
+}
 
 [deps]
 
-source_file="res://Assets/Textures/Flashlight/cookie_2.jpg"
-dest_files=["res://.godot/imported/cookie_2.jpg-71f4def4736cd1d25d31fb085cd35353.s3tc.ctex"]
+source_file="res://Assets/Models/WorkZone/Fan/rust-desk-fanFix_Image_22.png"
+dest_files=["res://.godot/imported/rust-desk-fanFix_Image_22.png-c2f67745dfea5332a8a81e4daba60669.s3tc.ctex"]
 
 [params]
 

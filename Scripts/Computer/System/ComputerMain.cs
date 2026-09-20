@@ -6,6 +6,7 @@ public partial class ComputerMain : PanelContainer
 {
 
 	public event Action OnCameraButtonPressed;
+	public event Action OnLvlWin;
 	
 	[Export] private Button _startTaskButton;
 	[Export] private ProgressBar _taskProgress;
@@ -49,6 +50,11 @@ public partial class ComputerMain : PanelContainer
 		_taskProgress.Value = 0;
 
 		_taskNameLabel.Text = _currentTask.Name;
+
+
+		// SINGLE
+
+		SceneManager.Instance.RegisterComputer(this);
 
 	}
 
@@ -107,7 +113,7 @@ public partial class ComputerMain : PanelContainer
 
 	}
 
-	private void LoadNextTask()
+	private async void LoadNextTask()
 	{
 		
 		if (_currentTaskIndex + 1 < _tasks.Count)
@@ -131,6 +137,8 @@ public partial class ComputerMain : PanelContainer
 			
 			_taskNameLabel.Text = "YOU WIN!";
 			_isActiveProgress = false;
+			
+			OnLvlWin?.Invoke();
 
 		}
 
@@ -141,6 +149,14 @@ public partial class ComputerMain : PanelContainer
 		
 		_startTaskButton.ButtonPressed = false;
 
+	}
+
+	public override void _ExitTree()
+	{
+		if (SceneManager.Instance != null)
+		{
+			SceneManager.Instance.UnregisterComputer(this);
+		}
 	}
 
 

@@ -15,6 +15,10 @@ run/main_scene="uid://d4nvp5untinph"
 config/features=PackedStringArray("4.7", "C#", "GL Compatibility")
 run/max_fps=60
 
+[autoload]
+
+SceneManager="*uid://bealpo4w6kvrd"
+
 [display]
 
 window/size/mode=4

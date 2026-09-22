@@ -46,6 +46,9 @@ public partial class CameraPanel : PanelContainer
 			case 1:
 				_camNameLabel.Text = "КАМЕРА: УЛИЦА_2";
 			break;
+			case 2:
+				_camNameLabel.Text = "КАМЕРА: СКЛАД";
+			break;
 
 		}
 

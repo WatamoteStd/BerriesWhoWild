@@ -6,7 +6,7 @@ resource_name = "LowPassFilter"
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_j3pel"]
 resource_name = "Reverb"
 room_size = 0.22
-damping = 0.22
+damping = 0.48
 
 [resource]
 bus/1/name = &"WorkZone"

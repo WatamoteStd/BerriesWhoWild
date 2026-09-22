@@ -1,5 +1,7 @@
 using Godot;
 using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 public partial class Player : Node3D
 {
@@ -11,6 +13,11 @@ public partial class Player : Node3D
 	[Export] private RayCast3D _raycast;
 	[Export] private SpotLight3D _flashlight;
 	[Export] private float _sensativity = 0.003f;
+	[Export] private AudioStreamPlayer3D _flashlight_off;
+	[Export] private AudioStreamPlayer3D _flashlight_on;
+
+	private CancellationTokenSource _flashlightCts;
+	
 	private float _rotationCap;
 	private float _targetRotationY = 0f;
 
@@ -47,11 +54,23 @@ public partial class Player : Node3D
 
 			if (@event.IsActionPressed("FlashlightAction"))
 			{
-				_flashlight.Visible = true;
+				
+				_flashlightCts?.Cancel();
+				_flashlightCts?.Dispose();
+				_flashlightCts = new CancellationTokenSource();
+
+				ToggleFlashlightAsync(true, _flashlightCts.Token);
+
 			}
 			if (@event.IsActionReleased("FlashlightAction"))
 			{
-				_flashlight.Visible = false;
+				
+				_flashlightCts?.Cancel();
+				_flashlightCts?.Dispose();
+				_flashlightCts = new CancellationTokenSource();
+
+				ToggleFlashlightAsync(false, _flashlightCts.Token);
+
 			}
 			if (@event.IsActionPressed("InteractAction") )
 			{
@@ -101,6 +120,34 @@ public partial class Player : Node3D
 
 
 
+	private async void ToggleFlashlightAsync(bool turnOn, CancellationToken ct)
+	{
+		if (turnOn)
+		{
+			_flashlight_on.PitchScale = (float)GD.RandRange(0.95, 1.1);
+			_flashlight_on.VolumeDb = (float)GD.RandRange(-1.0, 1.0f);
+			_flashlight_on.Play();
 
+			try
+			{
+				await Task.Delay(100, ct); 
+			}
+			catch (OperationCanceledException) 
+			{
+				return; 
+			}
 
+			_flashlight.Visible = true;
+		}
+		else
+		{
+			_flashlight.Visible = false;
+
+			_flashlight_off.PitchScale = (float)GD.RandRange(0.95, 1.1);
+			_flashlight_off.VolumeDb = (float)GD.RandRange(-1.0, 1.0f);
+			_flashlight_off.Play();
+		}
+	}
+
+	
 }

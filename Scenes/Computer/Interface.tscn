@@ -133,7 +133,7 @@ shader = SubResource("Shader_3qcwo")
 shader_parameter/color_levels = 66.05200304247
 shader_parameter/chromatic_aberration = 0.0
 shader_parameter/blur_amount = 1.55200007372
-shader_parameter/brightness = 1.9310000679725001
+shader_parameter/brightness = 1.9310000679725
 shader_parameter/saturation = 1.0
 shader_parameter/color_offset_multiplier = 0.20000000298023
 shader_parameter/black_offset_multiplier = 0.11600000551
@@ -405,6 +405,7 @@ theme_override_font_sizes/font_size = 16
 text = "Done."
 
 [node name="Main" type="PanelContainer" parent="AspectRatioContainer" unique_id=1256485272 node_paths=PackedStringArray("_startTaskButton", "_taskProgress", "_taskNameLabel", "_taskAction", "_openCameraButton")]
+visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_i3s3x")
 script = ExtResource("4_e6mqj")
@@ -497,8 +498,8 @@ visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_vcdtc")
 script = ExtResource("7_jrpk0")
-_backButton = NodePath("VBoxContainer/BackButton")
-_cameraButtons = [NodePath("VBoxContainer/CamButtons/Camera_0"), NodePath("VBoxContainer/CamButtons/Camera_1")]
+_backButton = NodePath("ControlPanel/BackButton")
+_cameraButtons = [NodePath("ControlPanel/CamButtons/Camera_0"), NodePath("ControlPanel/CamButtons/Camera_1"), NodePath("ControlPanel/CamButtons/Camera_2")]
 _viewport = NodePath("SubViewportContainer/SubViewport")
 _camNameLabel = NodePath("LabelsOverlay/Label")
 
@@ -508,20 +509,20 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="AspectRatioContainer/Cameras/SubViewportContainer" unique_id=89973478]
 handle_input_locally = false
-size = Vector2i(2, 2)
+size = Vector2i(648, 648)
 render_target_update_mode = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer/Cameras" unique_id=1562405824]
+[node name="ControlPanel" type="VBoxContainer" parent="AspectRatioContainer/Cameras" unique_id=1562405824]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 theme_override_constants/separation = 15
 
-[node name="CamButtons" type="HBoxContainer" parent="AspectRatioContainer/Cameras/VBoxContainer" unique_id=590184491]
+[node name="CamButtons" type="HBoxContainer" parent="AspectRatioContainer/Cameras/ControlPanel" unique_id=590184491]
 layout_mode = 2
 theme_override_constants/separation = 25
 
-[node name="Camera_0" type="Button" parent="AspectRatioContainer/Cameras/VBoxContainer/CamButtons" unique_id=1510162478]
+[node name="Camera_0" type="Button" parent="AspectRatioContainer/Cameras/ControlPanel/CamButtons" unique_id=1510162478]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -533,7 +534,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_5gfxg")
 theme_override_styles/hover = SubResource("StyleBoxFlat_cy4or")
 text = "УЛИЦА_1"
 
-[node name="Camera_1" type="Button" parent="AspectRatioContainer/Cameras/VBoxContainer/CamButtons" unique_id=1791340688]
+[node name="Camera_1" type="Button" parent="AspectRatioContainer/Cameras/ControlPanel/CamButtons" unique_id=1791340688]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -545,7 +546,19 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_n7vx2")
 theme_override_styles/hover = SubResource("StyleBoxFlat_h7ou7")
 text = "УЛИЦА_2"
 
-[node name="BackButton" type="Button" parent="AspectRatioContainer/Cameras/VBoxContainer" unique_id=469437410]
+[node name="Camera_2" type="Button" parent="AspectRatioContainer/Cameras/ControlPanel/CamButtons" unique_id=1744748236]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("7_ewvtf")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_yj34d")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n7vx2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h7ou7")
+text = "СКЛАД"
+
+[node name="BackButton" type="Button" parent="AspectRatioContainer/Cameras/ControlPanel" unique_id=469437410]
 custom_minimum_size = Vector2(250, 40)
 layout_mode = 2
 size_flags_horizontal = 4

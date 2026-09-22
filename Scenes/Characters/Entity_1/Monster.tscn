@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://d2oytj3xaggyx"]
+
+[ext_resource type="Script" uid="uid://gsnnm1mehvhe" path="res://Scripts/Characters/LightScared/LightScaredMonster.cs" id="1_xn7b4"]
+[ext_resource type="Resource" uid="uid://bkjw4pbi0kukx" path="res://Resources/MonstersAgro/AgroLvl_Low.tres" id="2_nyu7w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ichqs"]
+albedo_color = Color(0.9292762, 0.00046200707, 0.20110583, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_6u82b"]
+material = SubResource("StandardMaterial3D_ichqs")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_83fg3"]
+
+[node name="LightScared" type="StaticBody3D" unique_id=1204434338 node_paths=PackedStringArray("_moveMarkers", "_hearthTimer")]
+script = ExtResource("1_xn7b4")
+_moveMarkers = []
+_agroSettings = ExtResource("2_nyu7w")
+_hearthTimer = NodePath("Timer")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=674506130]
+mesh = SubResource("CapsuleMesh_6u82b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1305056139]
+shape = SubResource("CapsuleShape3D_83fg3")
+
+[node name="Timer" type="Timer" parent="." unique_id=2051098993]
+autostart = true

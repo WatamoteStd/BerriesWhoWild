@@ -17,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://csu3n7juqxd72" path="res://Assets/Models/LED/Rope/power_lines_voltage_electricity_0.png" id="4_6iyac"]
 [ext_resource type="Texture2D" uid="uid://clfci5yyxcgub" path="res://Assets/Textures/BrickWall/Rought.png" id="4_gt3je"]
 [ext_resource type="Texture2D" uid="uid://dyui77ks2hwn7" path="res://Assets/Models/Trees/2/low_poly_forest_tree_pack_6.png" id="4_hibaj"]
-[ext_resource type="Script" uid="uid://xpeu7qg8nh4j" path="res://Scripts/Characters/MonsterPoint.cs" id="4_jjvhh"]
 [ext_resource type="Texture2D" uid="uid://c0ej5qm7wara5" path="res://Assets/Textures/Ground/rought.png" id="4_ueoa1"]
 [ext_resource type="Texture2D" uid="uid://dwcmpc3sko7ug" path="res://Assets/Models/LED/Rope/power_lines_voltage_electricity_1.png" id="5_fdnlq"]
 [ext_resource type="Script" uid="uid://balmq873ok0cv" path="res://Scripts/Computer/System/CameraManager.cs" id="5_kry3j"]
@@ -41,6 +40,8 @@
 [ext_resource type="PackedScene" uid="uid://dvg85w2bfie48" path="res://Assets/Models/WorkZone/Storage/Shelf/low-poly_metal_shelf.glb" id="36_536cc"]
 [ext_resource type="AudioStream" uid="uid://b8wtdkovvfqyt" path="res://Assets/SFX/Night/Flashlight/flashlight_on.mp3" id="38_8cuat"]
 [ext_resource type="AudioStream" uid="uid://hvcsebyjeh3j" path="res://Assets/SFX/Night/Flashlight/flashlight_off.mp3" id="39_o1aky"]
+[ext_resource type="PackedScene" uid="uid://d2oytj3xaggyx" path="res://Scenes/Characters/Entity_1/Monster.tscn" id="41_8cuat"]
+[ext_resource type="Script" uid="uid://bl20t2fa1ew8t" path="res://Scripts/Characters/MonsterMoveTarget.cs" id="41_o1aky"]
 
 [sub_resource type="Sky" id="Sky_6u82b"]
 
@@ -1407,23 +1408,23 @@ size = Vector3(25, 0.1, 25)
 metadata/_edit_lock_ = true
 
 [node name="Wall" type="CSGBox3D" parent="Envirmoment/Building/Core" unique_id=1713493342]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.058, 2.793332, 12)
-size = Vector3(30, 6.0245547, 0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02345407, 2.793332, 12)
+size = Vector3(26.006104, 6.0245547, 0.5)
 metadata/_edit_lock_ = true
 
 [node name="Wall2" type="CSGBox3D" parent="Envirmoment/Building/Core" unique_id=117356936]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -12)
-size = Vector3(30, 5, 0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45581055, 2.5, -12)
+size = Vector3(29.088379, 5, 0.5)
 metadata/_edit_lock_ = true
 
 [node name="Wall3" type="CSGBox3D" parent="Envirmoment/Building/Core" unique_id=126249204]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2.5, 0)
-size = Vector3(0.5, 5, 30)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2.5, -0.48358154)
+size = Vector3(0.5, 5, 25.041626)
 metadata/_edit_lock_ = true
 
 [node name="Wall4" type="CSGBox3D" parent="Envirmoment/Building/Core" unique_id=1355890882]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.440104, 2.4791884, 0)
-size = Vector3(0.5, 5, 30)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.440104, 2.4791884, 0.9650879)
+size = Vector3(0.5, 5, 28.069824)
 material = SubResource("StandardMaterial3D_ewvtf")
 metadata/_edit_lock_ = true
 
@@ -1440,8 +1441,8 @@ size = Vector3(3, 4.3, 0.8)
 metadata/_edit_lock_ = true
 
 [node name="ArrayWall_1" type="CSGBox3D" parent="Envirmoment/Building/Core" unique_id=71964094]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2.266468, 22.450565)
-size = Vector3(0.5, 5, 15)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2.266468, 21.035282)
+size = Vector3(0.5, 5, 17.830566)
 
 [node name="ArrayWall_2" type="CSGBox3D" parent="Envirmoment/Building/Core" unique_id=1484642647]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23018074, 2.2978172, 20.984394)
@@ -1607,7 +1608,7 @@ omni_range = 15.0
 omni_attenuation = 1.268
 
 [node name="Lampa" parent="Envirmoment/Building/Sklad" unique_id=976195521 instance=ExtResource("30_e08e2")]
-transform = Transform3D(2.1855695e-09, -1.9106854e-16, 0.05, -4.371139e-09, -0.05, 0, 0.05, -4.371139e-09, -2.1855695e-09, 0, 4.325553, 2.0562534)
+transform = Transform3D(2.1855695e-09, -1.9106854e-16, 0.05, -4.371139e-09, -0.05, 0, 0.05, -4.371139e-09, -2.1855695e-09, 0, 4.317903, 2.0562534)
 
 [node name="Shelfs" type="Node3D" parent="Envirmoment/Building/Sklad" unique_id=1608869471]
 
@@ -1681,13 +1682,6 @@ stream = ExtResource("39_o1aky")
 max_distance = 25.0
 bus = &"WorkZone"
 
-[node name="Monster_1_MovePoints" type="Node3D" parent="." unique_id=1603293529]
-
-[node name="Point_1" type="Marker3D" parent="Monster_1_MovePoints" unique_id=291217920]
-transform = Transform3D(-1.8, 0, 1.57361e-07, 0, 1.8, 0, -1.57361e-07, 0, -1.8, -13.196309, 0, -11.52284)
-script = ExtResource("4_jjvhh")
-AnimationName = "LookFromCorner"
-
 [node name="Camera_Points" type="Node3D" parent="." unique_id=889213744]
 
 [node name="Camera_0_Outside" type="Marker3D" parent="Camera_Points" unique_id=1300935673]
@@ -1704,3 +1698,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7846775, 65.10322)
 fov = 95.0
 script = ExtResource("5_kry3j")
 _cameraPoints = [NodePath("../Camera_Points/Camera_0_Outside"), NodePath("../Camera_Points/Camera_1_Roof"), NodePath("../Camera_Points/Camera_2_Storage")]
+
+[node name="LightScared_MovePoint" type="Node3D" parent="." unique_id=757930049]
+
+[node name="point_0" type="Marker3D" parent="LightScared_MovePoint" unique_id=901695233]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.685875, 0.69569206, 32.957447)
+script = ExtResource("41_o1aky")
+
+[node name="point_1" type="Marker3D" parent="LightScared_MovePoint" unique_id=1025432770]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.684649, 0.62864983, -0.7113204)
+script = ExtResource("41_o1aky")
+
+[node name="point_2" type="Marker3D" parent="LightScared_MovePoint" unique_id=2139868444]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -13.612453, 0.49965405, -8.760431)
+script = ExtResource("41_o1aky")
+
+[node name="point_3" type="Marker3D" parent="LightScared_MovePoint" unique_id=975903076]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.8564687, 0.49965405, -3.5474815)
+script = ExtResource("41_o1aky")
+
+[node name="LightScared" parent="." unique_id=1204434338 node_paths=PackedStringArray("_moveMarkers") instance=ExtResource("41_8cuat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.715622, 0.4701755, -35.962532)
+_moveMarkers = [NodePath("../LightScared_MovePoint/point_0"), NodePath("../LightScared_MovePoint/point_1"), NodePath("../LightScared_MovePoint/point_2"), NodePath("../LightScared_MovePoint/point_3")]

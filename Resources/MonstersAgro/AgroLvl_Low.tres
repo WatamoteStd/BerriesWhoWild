@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MonsterAgroSettings" format=3 uid="uid://bkjw4pbi0kukx"]
+
+[ext_resource type="Script" uid="uid://csfe1gtbx8382" path="res://Resources/MonstersAgro/MonsterAgroSettings.cs" id="1_8h7do"]
+
+[resource]
+script = ExtResource("1_8h7do")
+Hearhtbeat = 15.0
+AggroLevel = 50
+TimeBeforeJumpScare = 3.0
